@@ -2,7 +2,7 @@
 
 PROJECT_NAME="$1"
 
-if [ -z "$PROJECT_NAME" ]; then
+if [ "$#" -ne 1 ]; then
   echo "Usage: ./setup.sh <project-name>"
   exit 1
 fi
