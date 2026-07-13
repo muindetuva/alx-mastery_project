@@ -7,7 +7,7 @@ if [ -z "$PROJECT_NAME" ]; then
   exit 1
 fi
 
-if [ -e "$PROJECT_NAME" ]; then
+if [ -d "$PROJECT_NAME" ]; then
   echo "Error: project folder '$PROJECT_NAME' already exists."
   exit 1
 fi
