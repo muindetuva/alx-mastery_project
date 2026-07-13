@@ -19,6 +19,8 @@ The script creates:
 - `README.md`
 - `.git/`
 
+The generated `README.md` includes the project name, creation date, placeholder sections, and a project structure summary.
+
 If the requested project directory already exists, the script prints an error and exits without overwriting it.
 
 ## Verification
