@@ -30,6 +30,13 @@ TODO: Add a short description of this project.
 
 TODO: Add usage instructions.
 
+## Project Structure
+
+- src/
+- docs/
+- tests/
+- data/
+
 ## Contributing
 
 TODO: Add contribution guidelines.
