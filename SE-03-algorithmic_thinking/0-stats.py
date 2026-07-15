@@ -8,20 +8,25 @@ VALID_STATUS_CODES = (200, 301, 400, 401, 403, 404, 405, 500)
 
 def parse_line(line):
     """Return status code and file size from a valid log line."""
-    parts = line.split()
+    line = line.strip()
 
-    if len(parts) != 9:
+    first_split = line.split(" - [", 1)
+    if len(first_split) != 2 or first_split[0] == "":
         return None
 
-    if parts[1] != "-" or parts[4] != '"GET':
+    second_split = first_split[1].split(
+        '] "GET /projects/260 HTTP/1.1" ', 1
+    )
+    if len(second_split) != 2 or second_split[0] == "":
         return None
 
-    if parts[5] != "/projects/260" or parts[6] != 'HTTP/1.1"':
+    parts = second_split[1].split()
+    if len(parts) != 2:
         return None
 
     try:
-        status_code = int(parts[7])
-        file_size = int(parts[8])
+        status_code = int(parts[0])
+        file_size = int(parts[1])
     except ValueError:
         return None
 
@@ -40,6 +45,7 @@ def main():
     """Process stdin and print metrics every 10 valid lines."""
     total_size = 0
     valid_lines = 0
+    last_printed_count = -1
     status_counts = {code: 0 for code in VALID_STATUS_CODES}
 
     try:
@@ -57,11 +63,13 @@ def main():
 
             if valid_lines % 10 == 0:
                 print_stats(total_size, status_counts)
+                last_printed_count = valid_lines
     except KeyboardInterrupt:
         print_stats(total_size, status_counts)
         raise
 
-    print_stats(total_size, status_counts)
+    if valid_lines != last_printed_count:
+        print_stats(total_size, status_counts)
 
 
 if __name__ == "__main__":
