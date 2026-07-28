@@ -22,7 +22,10 @@ def display_category_breakdown(category_breakdown):
     print()
     print("Category Breakdown:")
     for category, score in category_breakdown.items():
-        print(f"- {category}: {score['correct']}/{score['total']}")
+        correct = score["correct"]
+        total = score["total"]
+        percentage = score["percentage"]
+        print(f"- {category}: {correct}/{total} ({percentage:.1f}%)")
 
 
 def display_performance_message(percentage):
@@ -30,7 +33,13 @@ def display_performance_message(percentage):
     print(get_performance_message(percentage))
 
 
-def display_results(player_name, correct, total, percentage, category_breakdown):
+def display_results(
+    player_name,
+    correct,
+    total,
+    percentage,
+    category_breakdown,
+):
     display_header(player_name)
     display_total_score(correct, total, percentage)
     display_category_breakdown(category_breakdown)

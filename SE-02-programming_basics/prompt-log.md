@@ -6,8 +6,8 @@
 
 **What does each module contain, and what does it import from the others?**
 
-- `question_bank.py` contains the quiz question data. It exports a list called `QUESTIONS`.
-- `quiz_logic.py` contains the quiz loop, input validation, category selection, scoring updates, and the set of asked question indexes. It imports `QUESTIONS` from `question_bank.py`.
+- `questions.py` contains the quiz question data and category helpers. It exports a list called `QUESTIONS`.
+- `quiz.py` contains the quiz loop, input validation, scoring updates, and the set of asked question indexes. It receives questions from `main.py`.
 - `results.py` contains functions that display the final score, category breakdown, and performance message. It does not need to import the question bank.
 - `main.py` is the entry point. It asks for the player's name, calls the quiz logic, and passes the final results to the results display module.
 

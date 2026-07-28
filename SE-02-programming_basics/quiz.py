@@ -2,6 +2,9 @@ VALID_CHOICES = {"A", "B", "C", "D"}
 
 
 def get_category_questions(questions, category):
+    if category == "All":
+        return list(enumerate(questions))
+
     return [
         (index, question)
         for index, question in enumerate(questions)
@@ -35,6 +38,14 @@ def is_correct_answer(question, answer):
     return answer == question["answer"].upper()
 
 
+def get_correct_choice(question):
+    answer_prefix = f"{question['answer'].upper()}."
+    for choice in question["choices"]:
+        if choice.upper().startswith(answer_prefix):
+            return choice
+    return question["answer"].upper()
+
+
 def update_score(scores, category, is_correct):
     if category not in scores:
         scores[category] = {"correct": 0, "total": 0}
@@ -44,7 +55,13 @@ def update_score(scores, category, is_correct):
         scores[category]["correct"] += 1
 
 
-def ask_question(index, question, scores, asked_questions, input_func=input):
+def ask_question(
+    index,
+    question,
+    scores,
+    asked_questions,
+    input_func=input,
+):
     display_question(question)
     answer = get_valid_answer(input_func)
     correct = is_correct_answer(question, answer)
@@ -52,7 +69,7 @@ def ask_question(index, question, scores, asked_questions, input_func=input):
     if correct:
         print("Correct!")
     else:
-        print(f"Wrong. The correct answer was {question['answer']}.")
+        print(f"Wrong. The correct answer was {get_correct_choice(question)}.")
 
     update_score(scores, question["category"], correct)
     asked_questions.add(index)
@@ -64,7 +81,10 @@ def run_quiz(questions, category, input_func=input):
     scores = {}
 
     while len(asked_questions) < len(category_questions):
-        index, question = get_next_question(category_questions, asked_questions)
+        index, question = get_next_question(
+            category_questions,
+            asked_questions,
+        )
         if question is None:
             break
         ask_question(index, question, scores, asked_questions, input_func)
