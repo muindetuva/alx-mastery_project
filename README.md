@@ -17,3 +17,6 @@ deliverables and documentation for one curriculum stage.
   boundaries.
 - `SE-12-modern_rendering_strategies`: a high-performance Next.js content hub
   demonstrating SSG, SSR, ISR, Markdown content, and image optimization.
+- `SE-13-front-end_QA`: a real-time incident intelligence platform with typed
+  validation, local REST/WebSocket mocks, optimistic mutations, and Playwright
+  end-to-end tests.
