@@ -12,3 +12,6 @@ deliverables and documentation for one curriculum stage.
   with semantic HTML, Sass/CSS, JavaScript, and JSON data.
 - `UI-design_and_development`: a responsive SaaS landing page built with
   Tailwind CSS v4, Vite, and vanilla JavaScript.
+- `SE-11-component_architecture_react`: a resilient real-time React dashboard
+  demonstrating hooks, context, routing, Zustand, Redux Toolkit, and error
+  boundaries.

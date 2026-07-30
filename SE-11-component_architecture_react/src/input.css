@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand: #6957e8;
+  --color-accent: #25c6a7;
+  --color-canvas: #f5f6fb;
+  --color-ink: #1a1830;
+  --color-muted: #706e84;
+  --color-night: #0e0d1c;
+  --color-panel: #19172c;
+}
+
+@layer base {
+  body {
+    @apply m-0 bg-canvas font-sans text-ink antialiased transition-colors duration-300 dark:bg-night dark:text-white;
+  }
+
+  button,
+  a,
+  input {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2;
+  }
+}
