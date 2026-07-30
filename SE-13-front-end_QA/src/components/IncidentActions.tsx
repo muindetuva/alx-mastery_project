@@ -1,4 +1,7 @@
-import { useAcknowledgeIncident, useResolveIncident } from "../hooks/useIncidentActions";
+import {
+  useAcknowledgeIncident,
+  useResolveIncident,
+} from "../hooks/useOptimisticActions";
 import type { Incident } from "../types/incident";
 
 export default function IncidentActions({ incident }: { incident: Incident }) {
