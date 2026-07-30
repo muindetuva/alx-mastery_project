@@ -19,6 +19,7 @@ const initialActivities = [
 
 export const useDashboardStore = create((set) => ({
   activities: initialActivities,
+  connectionStatus: "connecting",
   status: "connecting",
   addActivity: (activity) => set((state) => ({
     activities: [
@@ -33,5 +34,9 @@ export const useDashboardStore = create((set) => ({
     ],
   })),
   clearActivities: () => set({ activities: [] }),
-  setStatus: (status) => set({ status }),
+  setConnectionStatus: (connectionStatus) => set({
+    connectionStatus,
+    status: connectionStatus,
+  }),
+  setStatus: (status) => set({ status, connectionStatus: status }),
 }));

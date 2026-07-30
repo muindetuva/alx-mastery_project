@@ -20,7 +20,9 @@ function DashboardPage() {
     "ws://localhost:8080",
   );
   const addActivity = useDashboardStore((state) => state.addActivity);
-  const setStatus = useDashboardStore((state) => state.setStatus);
+  const setConnectionStatus = useDashboardStore(
+    (state) => state.setConnectionStatus,
+  );
   const dispatch = useDispatch();
   const notificationCount = useSelector((state) => state.notifications.length);
   const handledMessages = useRef(0);
@@ -32,8 +34,8 @@ function DashboardPage() {
   }, [theme]);
 
   useEffect(() => {
-    setStatus(status);
-  }, [setStatus, status]);
+    setConnectionStatus(status);
+  }, [setConnectionStatus, status]);
 
   useEffect(() => {
     if (notificationCount === 0) {
