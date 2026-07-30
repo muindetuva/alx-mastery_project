@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand: #7057ff;
+  --color-brand-dark: #5138d8;
+  --color-accent: #35d5b4;
+  --color-accent-dark: #1ba58c;
+  --color-surface: #f7f7fc;
+  --color-ink: #16152b;
+  --color-muted: #686780;
+  --color-night: #0d0c1d;
+  --color-night-card: #18162e;
+  --shadow-glow: 0 24px 80px rgba(112, 87, 255, 0.28);
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-ink antialiased;
+  }
+
+  button,
+  a,
+  input,
+  textarea {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .glass-card {
+    @apply border border-white/60 bg-white/75 shadow-xl shadow-brand/5 backdrop-blur-xl dark:border-white/10 dark:bg-night-card/80;
+  }
+}

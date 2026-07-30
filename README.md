@@ -10,3 +10,5 @@ deliverables and documentation for one curriculum stage.
   `SE-08-ai_code_quality`: earlier mastery projects.
 - `SE-09-modern_web_languages`: an accessible, responsive portfolio built
   with semantic HTML, Sass/CSS, JavaScript, and JSON data.
+- `UI-design_and_development`: a responsive SaaS landing page built with
+  Tailwind CSS v4, Vite, and vanilla JavaScript.
