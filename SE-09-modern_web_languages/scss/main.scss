@@ -1,0 +1,66 @@
+@use "variables" as vars;
+@use "mixins" as mix;
+@use "theme";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: vars.$background-color;
+  color: vars.$text-color;
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+a {
+  color: vars.$primary-color;
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.2em;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+#hero {
+  @include mix.flex-center;
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+@include mix.responsive(768px) {
+  #projects {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+}
+
+@include mix.responsive(480px) {
+  .site-header,
+  .site-header nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+}

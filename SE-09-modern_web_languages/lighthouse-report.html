@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A local quality audit report for the SE-09 modern web portfolio project.">
+  <title>Local Portfolio Quality Audit</title>
+  <style>
+    body { font: 1rem/1.6 system-ui, sans-serif; margin: 2rem auto; max-width: 60rem; padding: 0 1rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #777; padding: 0.65rem; text-align: left; }
+    .pass { color: #08715f; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>SE-09 Local Portfolio Quality Audit</h1>
+    <p><strong>Audit type:</strong> Local source review</p>
+    <p>This environment did not provide a local Lighthouse installation or browser audit runner. No Lighthouse score is claimed. This report truthfully records equivalent project checks that were completed using locally available source-inspection tools.</p>
+    <table>
+      <caption>Locally reviewed quality requirements</caption>
+      <thead><tr><th scope="col">Requirement</th><th scope="col">Result</th><th scope="col">Evidence</th></tr></thead>
+      <tbody>
+        <tr><td>Document language</td><td class="pass">Pass</td><td>The root HTML element declares <code>lang="en"</code>.</td></tr>
+        <tr><td>Metadata</td><td class="pass">Pass</td><td>UTF-8, viewport, title, and a descriptive 50–160 character description are present.</td></tr>
+        <tr><td>Accessible names</td><td class="pass">Pass</td><td>Icon-only controls use explicit aria-label attributes.</td></tr>
+        <tr><td>Image efficiency</td><td class="pass">Pass</td><td>Images have descriptive alt text, explicit dimensions, and non-critical imagery uses lazy loading.</td></tr>
+        <tr><td>Script loading</td><td class="pass">Pass</td><td>The external JavaScript is loaded with <code>defer</code>.</td></tr>
+        <tr><td>Heading structure</td><td class="pass">Pass</td><td>One h1 is followed by section h2 headings and project h3 headings.</td></tr>
+        <tr><td>Link purpose</td><td class="pass">Pass</td><td>Project links include the project title and explain that they open source code.</td></tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

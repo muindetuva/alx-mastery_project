@@ -1,0 +1,15 @@
+@use "variables" as vars;
+
+.glass-panel {
+  background: rgba(vars.$surface-color, 0.78);
+  border: 1px solid rgba(vars.$primary-color, 0.14);
+  border-radius: 1.25rem;
+  box-shadow: 0 1rem 2.5rem rgba(vars.$text-color, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.dark-theme .glass-panel {
+  background: rgba(vars.$dark-background, 0.82);
+  border-color: rgba(vars.$dark-text, 0.16);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A modern web developer portfolio featuring accessible projects, practical skills, and contact information.">
+  <title>Alex Morgan | Modern Web Developer</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header glass-panel">
+    <a class="brand" href="#hero">Alex Morgan</a>
+    <nav id="primaryNav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button id="themeToggle" class="icon-button" type="button" aria-label="Switch color theme">◐</button>
+      <button id="menuToggle" class="icon-button" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Accessible interfaces. Dependable code.</p>
+        <h1 id="hero-title">I build thoughtful web experiences.</h1>
+        <p>I combine semantic HTML, maintainable styles, and purposeful JavaScript to turn ideas into inclusive digital products.</p>
+        <a class="button-link" href="#projects">Explore my projects</a>
+      </div>
+      <img src="images/developer-workspace.png" alt="Developer workspace with headphones beside a laptop" width="1672" height="941" loading="lazy">
+    </section>
+
+    <section id="about" class="glass-panel" aria-labelledby="about-title">
+      <div>
+        <h2 id="about-title">About me</h2>
+        <p>I am a web developer who enjoys transforming complex requirements into clear, usable interfaces. Accessibility, performance, and maintainability guide every implementation decision.</p>
+      </div>
+      <img src="images/collaboration.png" alt="Headphones representing focused remote collaboration" width="1672" height="941" loading="lazy">
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Featured projects</h2>
+      <div class="filter-control">
+        <label for="tagFilter">Filter by technology</label>
+        <select id="tagFilter">
+          <option value="All">All</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="skills" class="glass-panel" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>Current technical skills and confidence levels</caption>
+          <thead>
+            <tr>
+              <th scope="col">Technology</th>
+              <th scope="col">Focus</th>
+              <th scope="col">Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>HTML</td><td>Semantics and accessibility</td><td>Advanced</td></tr>
+            <tr><td>CSS/Sass</td><td>Responsive design systems</td><td>Advanced</td></tr>
+            <tr><td>JavaScript</td><td>Interactive browser interfaces</td><td>Intermediate</td></tr>
+            <tr><td>Git</td><td>Collaborative version control</td><td>Intermediate</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact me</h2>
+      <p>Have a project or an idea? Send a short message.</p>
+      <form id="contactForm" novalidate>
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" aria-required="true">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" aria-required="true">
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" aria-required="true"></textarea>
+        </div>
+        <button type="submit">Send message</button>
+        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Alex Morgan. Built with accessible web standards.</p>
+    <button id="scrollTop" class="icon-button scroll-top" type="button" aria-label="Scroll to the top of the page">↑</button>
+  </footer>
+</body>
+</html>

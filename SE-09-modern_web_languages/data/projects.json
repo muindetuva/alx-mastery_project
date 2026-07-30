@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Accessible Event Guide",
+    "description": "A keyboard-friendly event directory with semantic navigation and responsive schedules.",
+    "tags": ["HTML", "CSS", "Accessibility"],
+    "link": "https://github.com/"
+  },
+  {
+    "title": "Community Task Board",
+    "description": "A lightweight task dashboard with filtering, persistent preferences, and clear status feedback.",
+    "tags": ["JavaScript", "CSS", "JSON"],
+    "link": "https://github.com/"
+  },
+  {
+    "title": "Design Token Starter",
+    "description": "A modular Sass starter that keeps responsive spacing, colour, and themes consistent.",
+    "tags": ["Sass", "CSS", "Design Systems"],
+    "link": "https://github.com/"
+  },
+  {
+    "title": "Performance Notes",
+    "description": "A web quality checklist focused on accessible markup, efficient assets, and dependable loading.",
+    "tags": ["HTML", "Performance", "Accessibility"],
+    "link": "https://github.com/"
+  }
+]
