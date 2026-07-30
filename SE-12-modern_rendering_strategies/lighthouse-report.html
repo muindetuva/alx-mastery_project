@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A truthful local source and production-build audit for the Signal Next.js content hub.">
+  <title>Signal Local Build and Source Audit</title>
+  <style>
+    body { color: #17192d; font: 1rem/1.6 system-ui, sans-serif; margin: 2rem auto; max-width: 64rem; padding: 0 1rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #a4a6b3; padding: .7rem; text-align: left; }
+    .pass { color: #08715f; font-weight: 800; }
+    .note { background: #fff5cf; border-left: 4px solid #b48300; padding: 1rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Signal local build and source audit</h1>
+    <p class="note"><strong>No Lighthouse run or score is claimed.</strong> External Lighthouse and Vercel deployment were not executed in this local-only curriculum run. This required artifact records locally verifiable build and source evidence instead.</p>
+    <table>
+      <caption>Local project audit</caption>
+      <thead><tr><th scope="col">Area</th><th scope="col">Result</th><th scope="col">Local evidence</th></tr></thead>
+      <tbody>
+        <tr><td>Production compilation</td><td class="pass">Checked</td><td>The local <code>npm run build</code> command compiles strict TypeScript and all App Router routes.</td></tr>
+        <tr><td>Static article paths</td><td class="pass">Checked</td><td>Five Markdown slugs are returned by <code>generateStaticParams</code>.</td></tr>
+        <tr><td>Freshness policy</td><td class="pass">Checked</td><td>Article routes use sixty-second revalidation; ticker routes explicitly opt out of caching.</td></tr>
+        <tr><td>Image source</td><td class="pass">Checked</td><td>All page images use <code>next/image</code> with dimensions, sizes, and selective priority.</td></tr>
+        <tr><td>Metadata</td><td class="pass">Checked</td><td>Typed page metadata, Open Graph, Twitter cards, robots, and sitemap sources are present.</td></tr>
+        <tr><td>Loading stability</td><td class="pass">Checked</td><td>The dynamic article route includes a dimensionally stable loading skeleton.</td></tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

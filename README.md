@@ -15,3 +15,5 @@ deliverables and documentation for one curriculum stage.
 - `SE-11-component_architecture_react`: a resilient real-time React dashboard
   demonstrating hooks, context, routing, Zustand, Redux Toolkit, and error
   boundaries.
+- `SE-12-modern_rendering_strategies`: a high-performance Next.js content hub
+  demonstrating SSG, SSR, ISR, Markdown content, and image optimization.
