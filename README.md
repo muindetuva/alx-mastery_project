@@ -20,3 +20,5 @@ deliverables and documentation for one curriculum stage.
 - `SE-13-front-end_QA`: a real-time incident intelligence platform with typed
   validation, local REST/WebSocket mocks, optimistic mutations, and Playwright
   end-to-end tests.
+- `SE-17-backend_security`: a secure FastAPI note vault with password hashing,
+  JWT authentication, encryption at rest, and defensive middleware.
