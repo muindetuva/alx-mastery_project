@@ -18,6 +18,19 @@ this source review before a production release.
 | Medium | JWT revocation is not implemented | A stolen token works until expiration | Keep expiry short and add token identifiers plus a revocation strategy |
 | Low | The API exposes no audit persistence | Security events disappear with process logs | Send structured, redacted events to append-only centralized storage |
 
+## Finding dispositions
+
+| Finding | Disposition | Evidence or justification |
+|---|---|---|
+| JWT theft exposure window | **Fixed (mitigation applied)** | `auth.py` issues JWTs with an `exp` claim and a 15-minute lifetime, and decoding validates expiry. Full token revocation remains deferred until persistent shared storage is introduced. |
+| In-memory users and notes | **Deferred** | Durable database work is outside this runnable security lab. The service is not approved for multi-worker or production deployment until transactional persistence and uniqueness constraints replace the dictionaries. |
+| Development secret defaults | **Deferred** | Defaults keep local exercises reproducible. Production deployment is explicitly blocked until unique rotated values are injected from a managed secret store and startup validation rejects development defaults. |
+| Missing login rate limit | **Deferred** | A correct distributed limiter needs shared state and an account-recovery policy. Before public deployment, add per-account and per-source throttling, metrics, and alerting. |
+| Missing persistent audit trail | **Deferred** | Local structured logs demonstrate redaction, but they are not durable. Production approval requires forwarding security events to append-only centralized storage with controlled retention. |
+
+These dispositions are finding-specific release decisions, not a claim that
+the deferred risks are harmless. Every deferred item is a production blocker.
+
 ## Why JWT, Not Basic Auth or Sessions
 
 Basic Auth resends a long-lived password with every request and therefore has a
