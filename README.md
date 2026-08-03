@@ -22,3 +22,5 @@ deliverables and documentation for one curriculum stage.
   end-to-end tests.
 - `SE-17-backend_security`: a secure FastAPI note vault with password hashing,
   JWT authentication, encryption at rest, and defensive middleware.
+- `SE-18-high_performance_backend_systems`: a FastAPI, Celery, and Redis
+  notification engine with WebSocket delivery and jittered job retries.
