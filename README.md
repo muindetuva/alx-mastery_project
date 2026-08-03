@@ -24,3 +24,5 @@ deliverables and documentation for one curriculum stage.
   JWT authentication, encryption at rest, and defensive middleware.
 - `SE-18-high_performance_backend_systems`: a FastAPI, Celery, and Redis
   notification engine with WebSocket delivery and jittered job retries.
+- `SE-19-Containerization`: a two-service FastAPI cluster with production
+  Dockerfiles, environment-based configuration, and Docker Compose orchestration.

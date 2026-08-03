@@ -1,0 +1,22 @@
+services:
+  auth:
+    build:
+      context: ./auth-service
+    ports:
+      - "8001:8000"
+    env_file:
+      - .env
+    environment:
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+
+  data:
+    build:
+      context: ./data-service
+    ports:
+      - "8002:8000"
+    env_file:
+      - .env
+    environment:
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+    depends_on:
+      - auth
